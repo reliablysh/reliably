@@ -28,7 +28,7 @@ const sidebarSections = [
 
     <SharedSidebar :buttons="sidebarSections" />
     </aside>
-    <main>
+    <main class="py-5">
       <slot />
     </main>
   </div>
