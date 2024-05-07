@@ -7,6 +7,6 @@ definePageMeta({
 </script>
 <template>
     <div>
-        Hello, from Incidents
+        <IncidentList />
     </div>
 </template>
