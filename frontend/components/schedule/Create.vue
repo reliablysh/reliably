@@ -32,7 +32,6 @@ const usersStore = useUsersStore();
 const scheduleStore = useScheduleStore();
 
 const onSubmit = (values) => {
-  console.log("submit: ", values);
   const scheduleId = scheduleStore.schedules.length + 1;
   const newSchedule = {
     id: scheduleId,

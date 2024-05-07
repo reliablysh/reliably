@@ -29,7 +29,6 @@ const dialogOpen = ref(false);
 const usersStore = useUsersStore();
 
 const onSubmit = (values) => {
-  console.log("submit: ", values);
   const userId = usersStore.users.length + 1
   const newUser = {
     user_id: userId,

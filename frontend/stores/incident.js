@@ -3,39 +3,36 @@ import { ref } from 'vue'
 
 export const useIncidentStore = defineStore('incidents', () => {
   const incidents = ref([
-    {
-        id: 1,
-        impactedService: 'Service A',
-        assignTo: 'John Doe',
-        title: 'Incident Title',
-        urgency: 'High',
-        priority: 'High',
-        description: 'Incident Description',
-        status: 'New',
-        },
-        {
-        id: 2,
-        impactedService: 'Service B',
-        assignTo: 'Jane Doe',
-        title: 'Incident Title',
-        urgency: 'Medium',
-        priority: 'Medium',
-        description: 'Incident Description',
-        status: 'New',
-    }
   ])
 
-  function addIncident(newIncident) {
+  const addIncident = async (newIncident) => {
     incidents.value.push({
-      id: newIncident.id || Date.now().toString(),
-      impactedService: newIncident.impactedService,
-      assignTo: newIncident.assignTo,
-      title: newIncident.title,
-      urgency: newIncident.urgency || 'Default',
-      priority: newIncident.priority || 'Medium',
-      description: newIncident.description,
-      status: newIncident.status || 'New',
-    })
+        id: newIncident.id || Date.now().toString(),
+        impactedService: newIncident.impactedService,
+        assignTo: newIncident.assignTo,
+        title: newIncident.title,
+        urgency: newIncident.urgency || 'Default',
+        priority: newIncident.priority || 'Medium',
+        description: newIncident.description,
+        status: newIncident.status || 'New',
+    });
+
+    try {
+        const response = await $fetch('/api/incident/create', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newIncident)
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to create incident: ' + response);
+        }
+        return await response.json();
+    } catch (error) {
+        throw error;
+    }
   }
 
   function updateIncident(id, updatedIncident) {

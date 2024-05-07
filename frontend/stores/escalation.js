@@ -5,7 +5,7 @@ export const useEscalationStore = defineStore('escalations', () => {
   const escalations = ref([
     {
         id: 1,
-        name: 'Service A',
+        name: 'Service A Escalation Path',
         levels: [
           { id: 1, name: 'Level 1', schedule: 1 },
         ],
@@ -21,7 +21,6 @@ export const useEscalationStore = defineStore('escalations', () => {
       repeat: newEscalation.repeat
     })
 
-    console.log(escalations.value)
   }
 
   function updateEscalation(id, updatedEscalation) {
@@ -35,10 +34,15 @@ export const useEscalationStore = defineStore('escalations', () => {
     escalations.value = escalations.value.filter(e => e.id !== id)
   }
 
+  const getEscalation = (id) => {
+    return escalations.value.find(e => e.id === id)
+  }
+
   return {
     escalations,
     addEscalation,
     updateEscalation,
-    removeEscalation
+    removeEscalation,
+    getEscalation,
   }
 })

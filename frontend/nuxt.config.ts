@@ -14,4 +14,7 @@ export default defineNuxtConfig({
   pinia: {
     storesDirs: ['./stores/**'],
   },
+  runtimeConfig: {
+    resendApiKey: process.env.RESEND_API_KEY,
+  },
 })

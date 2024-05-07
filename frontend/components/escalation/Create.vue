@@ -13,14 +13,13 @@ const escalation = ref({
 });
 
 function addLevel(index: number) {
-  escalation.value.levels.push({ notify: "", minutesToAcknowledge: 10, name: `Level ${index + 1}` });
+  escalation.value.levels.push({ schedule: "", minutesToAcknowledge: 10, name: `Level ${index + 1}` });
 }
 
 
 const router = useRouter();
 
 const handleSubmit = () => {
-    console.log(escalation.value);
   escalationStore.addEscalation(escalation.value);
   // Navigate back or reset form
 

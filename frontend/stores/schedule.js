@@ -5,16 +5,16 @@ export const useScheduleStore = defineStore('schedules', () => {
   const schedules = ref([
     {
         id: 1,
-        name: 'Service A',
+        name: 'Service A Oncall Schedule',
         start: '2024-02-04T10:00:00',
-        users: [1, 2, 3],
+        users: [1],
         shiftRotation: 'weekly',
         },
         {
         id: 2,
-        name: 'Service B',
+        name: 'Service B Oncall Schedule',
         start: '2023-05-05T12:00:00',
-        users: [2, 4],
+        users: [1],
         shiftRotation: 'daily',
     }
   ])
