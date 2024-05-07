@@ -1,12 +1,13 @@
 <script setup lang="ts">
 
 definePageMeta({
-  layout: "app",
+    layout: "app",
 });
 
 </script>
+
 <template>
     <div>
-        Hello, from Schedule
+        <ScheduleCreate />
     </div>
 </template>

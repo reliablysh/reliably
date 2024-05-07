@@ -9,6 +9,8 @@ export const useUsersStore = defineStore('users', () => {
     { user_id: 4, name: 'Bob', email: 'bob@doe.com', role: 'admin' }
   ])
 
+  const getUser = (userId: number) => users.value.find(user => user.user_id === userId)
+
   function addUser(user: { user_id: string, name: string, email: string, role: string }) {
 
     users.value.push(user)
@@ -18,5 +20,5 @@ export const useUsersStore = defineStore('users', () => {
     users.value = users.value.filter(user => user.user_id !== userId)
   }
 
-  return { users, addUser, removeUser }
+  return { users, addUser, removeUser, getUser }
 })

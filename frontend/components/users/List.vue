@@ -9,7 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import { useUsersStore } from "~/stores/users";
+import { useUsersStore } from "@/stores/users";
 
 const usersStore = useUsersStore();
 const users = usersStore.users;
