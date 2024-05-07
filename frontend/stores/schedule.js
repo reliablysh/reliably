@@ -40,10 +40,15 @@ export const useScheduleStore = defineStore('schedules', () => {
     schedules.value = schedules.value.filter(s => s.id !== id)
   }
 
+  const getSchedule = (id) => {
+    return schedules.value.find(s => s.id === id)
+  }
+
   return {
     schedules,
     addSchedule,
     updateSchedule,
-    removeSchedule
+    removeSchedule,
+    getSchedule,
   }
 })
