@@ -9,6 +9,7 @@ export const useEscalationStore = defineStore('escalations', () => {
         levels: [
           { id: 1, name: 'Level 1', schedule: 1 },
         ],
+        repeat: 3,
     }
   ])
 
@@ -19,6 +20,8 @@ export const useEscalationStore = defineStore('escalations', () => {
       levels: newEscalation.levels,
       repeat: newEscalation.repeat
     })
+
+    console.log(escalations.value)
   }
 
   function updateEscalation(id, updatedEscalation) {
