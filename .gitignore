@@ -1,0 +1,85 @@
+# General
+*.log
+*.sql
+*.sqlite3
+*.pyc
+__pycache__/
+.dbshell
+.DS_Store
+Thumbs.db
+.env
+.env.local
+.env.*.local
+
+# Django specific
+*.py[cod]
+migrations/
+staticfiles/
+media/
+local_settings.py
+db.sqlite3
+celerybeat-schedule
+*.mo
+*.pot
+
+# Django - Ignore all log files and the database file (if using SQLite)
+*.log
+db.sqlite3
+
+# Vue.js/Nuxt specific
+node_modules/
+dist/
+.nuxt/
+coverage/
+.npm/
+yarn-error.log
+yarn-debug.log
+package-lock.json
+yarn.lock
+
+# Vue.js - Environment variables
+.env.local
+.env.*.local
+
+# Nuxt - build directories
+.nuxt/
+dist/
+static/sw.js
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# macOS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Python Bytecode
+__pycache__/
+*.py[cod]
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
